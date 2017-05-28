@@ -1,0 +1,14 @@
+<div class="node">
+	{{input type="text" class="hidden" 
+		id=(readonly slot.id)  
+		value=(readonly slot.title)
+	    enter=(action changetitle slot)
+	    focusOut=(action hideinput slot)
+	}}
+	{{input type="checkbox" class="check-box"  click=(action toggletitle slot.id)}}
+	<div id="{{slot.title}}" class="{{slot.id}}" class="kek" {{action display slot slot.title}}>
+		{{slot.title}}
+		{{input type="button" click=(action delete slot slot.id) class="remove-node" value="x"}}
+	</div>
+</div>
+

@@ -1,0 +1,11 @@
+<div class="dotolist">
+  <h2>What do you want to do today?</h2>
+  {{add-note val=(action 'pushvalue')}}
+  {{#each model as |slot|}}
+  	{{make-list slot=slot delete=(action 'delete') display=(action 'display') changetitle=(action 'changetitle') hideinput=(action 'hideinput') toggletitle=(action 'toggletitle')}}
+  {{/each}}
+  	<div class="result-holder">
+	  	<span class="tasks">Tasks left: {{nodes}}</span>
+		<span class="completed" {{action "deleteAll"}}>Clear {{checked}} completed task</span>
+	</div>
+</div>
